@@ -10,12 +10,13 @@ th, td {
     text-align: center;
 }
 
-thead th {
-    background-color: blue;
+.title-style {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
     color: white;
+    background-color: blue;
+    border: 2px solid transparent;
+    padding: 10px;
 }
 
-img {
-    display: block;
-    margin: 0 auto;
-}
