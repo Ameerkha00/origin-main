@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Audio List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 30px auto;
+    }
+    th, td {
+      border: 1px solid black;
+      text-align: center;
+      padding: 10px;
+    }
+    th {
+      background-color: rgb(164, 151, 151);
+    }
+    img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 6px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    audio {
+      width: 150px;
+      vertical-align: middle;
+    }
+    .timer {
+      display: inline-block;
+      margin-left: 8px;
+      font-size: 14px;
+      color: #333;
+    }
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    h2 {
+      text-align: center;
+    }
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Audio List</h2>
+
+  <table>
+    <tr>
+      <th>Cover</th>
+      <th>Title</th>
+      <th>Artist</th>
+      <th>Year</th>
+      <th>Play</th>
+      <th>Download</th>
+    </tr>
+
+    <!-- Shape of You -->
+    <tr>
+      <td>
+        <!-- Replace "shape_of_you.jpg" with your actual file name -->
+        <img src="SongsCover/ShapeOfYou-Cover.png" alt="Shape of You Cover">
+      </td>
+      <td>Shape of You</td>
+      <td>Ed Sheeran</td>
+      <td>2017</td>
+      <td>
+        <audio id="a1" controls preload="metadata">
+          <source src="AudioFiles/Ed Sheeran - Shape of You (Official Music Video).mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <span id="t1" class="timer">00:00 / 00:00</span>
+        <div id="a1err" class="error"></div>
+      </td>
+      <td><a href="AudioFiles/Ed Sheeran - Shape of You (Official Music Video).mp3" download>Download</a></td>
+    </tr>
+
+    <!-- Believer -->
+    <tr>
+      <td>
+        <!-- Replace "believer.jpg" with your actual file name -->
+        <img src="SongsCover/Believer-Cover.png" alt="Believer Cover">
+      </td>
+      <td>Believer</td>
+      <td>Imagine Dragons</td>
+      <td>2017</td>
+      <td>
+        <audio id="a2" controls preload="metadata">
+          <source src="AudioFiles/Imagine Dragons - Believer (Lyrics).mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <span id="t2" class="timer">00:00 / 00:00</span>
+        <div id="a2err" class="error"></div>
+      </td>
+      <td><a href="AudioFiles/Imagine Dragons - Believer (Lyrics).mp3" download>Download</a></td>
+    </tr>
+  </table>
+
+  <script>
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return "00:00";
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60);
+      return `${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+    }
+
+    function addAudioTimer(audioId, timerId, errId) {
+      const audio = document.getElementById(audioId);
+      const timer = document.getElementById(timerId);
+      const err = document.getElementById(errId);
+
+      audio.addEventListener('loadedmetadata', () => {
+        timer.textContent = `00:00 / ${formatTime(audio.duration)}`;
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        timer.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+      });
+
+      audio.addEventListener('error', () => {
+        const e = audio.error;
+        const codes = {
+          1: 'Aborted by user',
+          2: 'Network error (404 / blocked)',
+          3: 'Decode error (corrupt / unsupported)',
+          4: 'File not found or wrong type'
+        };
+        err.textContent = 'Audio error: ' + (codes[e?.code] || 'Unknown');
+      });
+    }
+
+    addAudioTimer('a1', 't1', 'a1err');
+    addAudioTimer('a2', 't2', 'a2err');
+  </script>
+</body>
+</html>
