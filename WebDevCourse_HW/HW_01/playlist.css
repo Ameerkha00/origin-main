@@ -57,3 +57,16 @@ img {
     display: block;
     margin: 0 auto;
 }
+
+.youtube-link {
+    color: #0047b3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.youtube-link:hover {
+    color: #0099ff;
+    text-decoration: underline;
+}
+
