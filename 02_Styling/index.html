@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Songs Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>My YouTube Songs Table</h1>
+
+    <table class="table" aria-label="YouTube songs">
+        <colgroup>
+            <col class="video">
+            <col class="year">
+            <col class="artist">
+            <col class="song">
+            <col class="thumb">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Video</th>
+                <th>Year</th>
+                <th>Artist</th>
+                <th>Song Name</th>
+                <th>Thumbnail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Video">
+                    <a class="watch" href="https://www.youtube.com/watch?v=JGwWNGJdvx8" target="_blank">Watch on
+                        YouTube</a>
+                </td>
+                <td class="year" data-label="Year">2017</td>
+                <td class="artist" data-label="Artist">Ed Sheeran</td>
+                <td class="song" data-label="Song Name">Shape of You</td>
+                <td class="thumb-cell" data-label="Thumbnail">
+                    <a class="thumb" href="https://www.youtube.com/watch?v=JGwWNGJdvx8" target="_blank">
+                        <img src="https://img.youtube.com/vi/JGwWNGJdvx8/hqdefault.jpg" alt="Shape of You thumbnail">
+                        <span class="play">▶︎</span>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td data-label="Video">
+                    <a class="watch" href="https://www.youtube.com/watch?v=DyDfgMOUjCI" target="_blank">Watch on
+                        YouTube</a>
+                </td>
+                <td class="year" data-label="Year">2019</td>
+                <td class="artist" data-label="Artist">Billie Eilish</td>
+                <td class="song" data-label="Song Name">bad guy</td>
+                <td class="thumb-cell" data-label="Thumbnail">
+                    <a class="thumb" href="https://www.youtube.com/watch?v=DyDfgMOUjCI" target="_blank">
+                        <img src="https://img.youtube.com/vi/DyDfgMOUjCI/hqdefault.jpg" alt="bad guy thumbnail">
+                        <span class="play">▶︎</span>
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td data-label="Video">
+                    <a class="watch" href="https://www.youtube.com/watch?v=4NRXx6U8ABQ" target="_blank">Watch on
+                        YouTube</a>
+                </td>
+                <td class="year" data-label="Year">2020</td>
+                <td class="artist" data-label="Artist">The Weeknd</td>
+                <td class="song" data-label="Song Name">Blinding Lights</td>
+                <td class="thumb-cell" data-label="Thumbnail">
+                    <a class="thumb" href="https://www.youtube.com/watch?v=4NRXx6U8ABQ" target="_blank">
+                        <img src="https://img.youtube.com/vi/4NRXx6U8ABQ/hqdefault.jpg" alt="Blinding Lights thumbnail">
+                        <span class="play">▶︎</span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
