@@ -23,13 +23,18 @@ function pageLoaded()
 function calculate()
 {
     let txt1Text = txt1.value;
-    let num1 = parseInt(txt1Text);
+    let num1 = parseFloat(txt1Text);
 
     let txt2Text = txt2.value;
-    let num2 = parseInt(txt2Text);
+    let num2 = parseFloat(txt2Text);
 
-    let res = num1+num2;
-    lblRes.innerText = res;
+    if(isNaN(num1) || isNaN(num2)) {
+        lblRes.innerText = "Invalid Input";
+    }
+    else{
+        let res = num1+num2;
+        lblRes.innerText = res.toFixed(2);
+    }
 }
 
 
