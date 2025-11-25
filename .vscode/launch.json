@@ -8,7 +8,8 @@
             "type": "msedge",
             "request": "launch",
             "name": "Open index.html",
-            "file": "c:\\Users\\Admin\\Desktop\\לימודים\\תואר מדעי מחשב\\שביעי\\WebDev\\04_HtmlElements\\index.html"
+            "url": "http://127.0.0.1:5500/05_JSON/index.html", // ore your loacal dev server
+            "webRoot": "${workspaceFolder}"
         }
     ]
 }
