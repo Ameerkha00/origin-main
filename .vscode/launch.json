@@ -8,7 +8,7 @@
             "type": "msedge",
             "request": "launch",
             "name": "Open index.html",
-            "url": "http://127.0.0.1:5500/05_JSON/index.html", // ore your loacal dev server
+            "url": "http://127.0.0.1:5500/07_API/list.html", // ore your loacal dev server
             "webRoot": "${workspaceFolder}"
         }
     ]
